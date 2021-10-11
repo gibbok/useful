@@ -40,13 +40,13 @@ hub pull-request -i x
 git branch | grep -v "master" | xargs git branch -D
 ```
 
-## pull multiple projects automatically
+## Pull multiple projects automatically
 
 ```shell
 find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;
 ```
 
-## remove all files which are not tracked by git
+## Remove all files which are not tracked by git
 
 ```shell
 git clean -fxd
@@ -58,19 +58,19 @@ git clean -fxd
 git branch -f main HEAD~3
 ```
 
-## shorthand for a fetch and a rebase
+## Shorthand for a fetch and a rebase
 
 ```shell
 git pull --rebase
 ```
 
-## show any action performed in git
+## Show any action performed in git
 
 ```shell
 git reflog
 ```
 
-## print the SHA1 hashes given a revision
+## Print the SHA1 hashes given a revision
 
 ```shell
 git rev-parse
