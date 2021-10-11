@@ -52,7 +52,9 @@ find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;
 git clean -fxd
 ```
 
-## To move branches around, reassign a branch to a commit with the -f option. It moves (by force) the main branch to three parents behind HEAD.
+## Move branches around 
+
+Reassign a branch to a commit with the -f option. It moves (by force) the main branch to three parents behind HEAD.
 
 ```shell
 git branch -f main HEAD~3
