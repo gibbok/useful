@@ -77,3 +77,12 @@ git reflog
 ```shell
 git rev-parse
 ```
+
+## Remove all branches matching a pattern
+```shell
+git branch | grep "<pattern>" | xargs git branch -D
+```
+
+# Resources
+
+[Deep Dive into Git - Edward Thomson](https://www.youtube.com/watch?v=fBP18-taaNw)
