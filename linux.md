@@ -56,6 +56,12 @@ kill -9 41403
 pkill X
 ```
 
+### Check which video card is being used
+
+```shell
+prime-select query
+```
+
 ## Docker
 
 ### Inspect content for a container
@@ -63,3 +69,4 @@ pkill X
 ```shell
 docker exec -t -i mycontainer /bin/bash
 ```
+
