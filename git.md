@@ -79,8 +79,18 @@ git rev-parse
 ```
 
 ## Remove all branches matching a pattern
+
 ```shell
 git branch | grep "<pattern>" | xargs git branch -D
+```
+
+## Check all differences between two branches and apply to a new branch
+
+```shell
+git checkout master
+git diff master..your-branch > mypatch.patch
+git checkout -b new-branch
+git apply mypatch.patch
 ```
 
 # Resources
