@@ -79,3 +79,6 @@ gio trash
 docker exec -t -i mycontainer /bin/bash
 ```
 
+## Resources
+
+[Bash Builtin Commands](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html)
