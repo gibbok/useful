@@ -2,7 +2,8 @@
 
 ## Cleanup
 
-Reset/cleanuo docker
+Reset/cleanup docker
+
 ```shell
 docker-compose down
 docker system prune
