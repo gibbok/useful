@@ -15,6 +15,6 @@ docker container prune
 
 docker volume prune
 docker volume rm $(docker volume ls -q) # clean volumes
-docker restart
 docker network prune
+docker restart
 ```
