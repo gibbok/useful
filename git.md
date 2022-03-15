@@ -12,6 +12,11 @@ git reset $(git merge-base master XXX)
 git commit -a --amend --no-edit --no-verify; git push --force-with-lease
 ```
 
+## Create an empty commit
+```shell
+git commit --allow-empty -m "My empty commit with a message"
+```
+
 ## Rename git branch locally and remotely
 
 ```shell
