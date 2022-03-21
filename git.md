@@ -98,6 +98,19 @@ git checkout -b new-branch
 git apply mypatch.patch
 ```
 
+## Remove all untracked files
+
+To see which files will be deleted:
+
+```shell
+git clean -n
+```
+
+To remove all files:
+```shell
+git clean -f
+```
+
 # Resources
 
 [Deep Dive into Git - Edward Thomson](https://www.youtube.com/watch?v=fBP18-taaNw)
