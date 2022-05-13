@@ -62,6 +62,12 @@ pkill X
 prime-select query
 ```
 
+### Clear shell formatting
+
+```shell
+stty onlcr icrnl
+```
+
 ### Use GIO
 
 Current versions of Ubuntu Linux (including 20.04) contain a highly-developed version of the Gnome desktop manager. Part of that system is the included gio command, which provides control of the gnome virtual file system (gvfs), which allows non-administrative users to connect and access network file systems.
