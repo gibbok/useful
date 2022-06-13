@@ -77,6 +77,14 @@ gio tree
 gio trash
 ```
 
+### Check if linux binary file is 32-bit or 64-bit
+
+Will print 01 if file is a 32-bit binary and 02 if it is 64-bit.
+
+```shell
+od -An -t x1 -j 4 -N 1 your-file
+```
+
 ## Docker
 
 ### Inspect content for a container
@@ -88,3 +96,4 @@ docker exec -t -i mycontainer /bin/bash
 ## Resources
 
 [Bash Builtin Commands](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html)
+
