@@ -85,6 +85,12 @@ Will print 01 if file is a 32-bit binary and 02 if it is 64-bit.
 od -An -t x1 -j 4 -N 1 your-file
 ```
 
+### Check architecture of a file
+
+```shell
+objdump -a your-file|grep 'file format'
+```
+
 ## Docker
 
 ### Inspect content for a container
