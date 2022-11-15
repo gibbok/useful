@@ -18,3 +18,9 @@ docker volume rm $(docker volume ls -q) # clean volumes
 docker network prune
 docker restart
 ```
+
+Stop and remove
+
+```shell
+docker ps -aq | xargs docker stop | xargs docker rm
+```
