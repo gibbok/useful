@@ -111,6 +111,14 @@ To remove all files:
 git clean -f
 ```
 
+## Revert latest commit which was pushed
+
+Create a new commit that undoes the changes of a previous commit.
+
+```shell
+git revert HEAD
+```
+
 # Resources
 
 [Deep Dive into Git - Edward Thomson](https://www.youtube.com/watch?v=fBP18-taaNw)
