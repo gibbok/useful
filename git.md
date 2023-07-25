@@ -119,6 +119,18 @@ Create a new commit that undoes the changes of a previous commit.
 git revert HEAD
 ```
 
+## Create a path file
+
+```shell
+git diff > my_patch.patch
+```
+
+## Apply a path file
+
+```shell
+ git apply my_patch.patch
+```
+
 # Resources
 
 [Deep Dive into Git - Edward Thomson](https://www.youtube.com/watch?v=fBP18-taaNw)
