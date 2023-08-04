@@ -26,6 +26,12 @@ grep -C2
 while sleep 1; do echo "Hi"; done
 ```
 
+or
+
+```
+watch -n 1 echo "Hi"
+```
+
 ### Pipe to file and at the same time show on screen
 
 ```shell
