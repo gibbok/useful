@@ -37,3 +37,18 @@ type TypeDeepPartial = DeepPartial<Type>
 ```
 
 [Example](https://www.typescriptlang.org/play?ssl=9&ssc=41&pln=1&pc=1#code/C4TwDgpgBAIhFgAoEMBOwCWyA2AeAKgHxQC8U+UEAHsBAHYAmAzlAPYBGAVhAMbABQUIVAD8UAN6Dh0oQG1EUDHSgBrCCFYAzcgF0RALljwkaTDgLydhANxTpAXztRD+W-1CRy4aGXFRkhnQArgC27BCoADRQ7IZ+AcFhEdGxEgmh4aj22fzu3l6QcAgo6FjYpEbFpmUE3oT8QA)
+
+
+## Unpack type from array type
+
+Given an array type, returns an union with all type in the array.
+
+```typescript
+export type Unpacked<T> = T extends Array<infer U> ? U : T;
+
+type Arr = [{a:number}, number, string]
+
+type Item = Unpacked<Arr>
+```
+
+[Example](https://www.typescriptlang.org/play?ssl=5&ssc=26&pln=1&pc=1#code/KYDwDg9gTgLgBDAnmYcCqA7MBDAxga2ABMAeAFQD44BeOMuUGYDIgZzgEEoptESBLDADNgUdFQD86OAC46AbgBQipCk7cacANoBvbDIwBXALYAjUQF8ANHCNnRN1jCiCA5gF1lq1AEkmxzUwcAmISLigKIA)
