@@ -46,7 +46,10 @@ git branch | grep -v "master" | xargs git branch -D
 ```
 
 ## List all branches except master and the current branch, and delete them
-git branch | grep -v "master\|$(git rev-parse --abbrev-ref HEAD)" | xargs git branch -d
+
+```shell
+git branch | grep -v "master\|$(git branch --show-current)" | xargs git branch -d
+```
 
 ## Pull multiple projects automatically
 
