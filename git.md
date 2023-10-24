@@ -51,6 +51,12 @@ git branch | grep -v "master" | xargs git branch -D
 git branch | grep -v "master\|$(git branch --show-current)" | xargs git branch -d
 ```
 
+or delete all branch except master and develop:
+
+```shell
+git branch | grep -v "develop\|master\|$(git branch --show-current)" | xargs git branch -D
+```
+
 ## Pull multiple projects automatically
 
 ```shell
