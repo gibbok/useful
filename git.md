@@ -146,3 +146,17 @@ git diff > my_patch.patch
 # Resources
 
 [Deep Dive into Git - Edward Thomson](https://www.youtube.com/watch?v=fBP18-taaNw)
+
+## Removing the last commit pushed
+
+```shell
+git reset --hard HEAD^
+git push origin -f
+```
+
+or
+
+```shell
+git reset --hard HEAD~1
+git push origin -f
+```
