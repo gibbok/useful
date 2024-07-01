@@ -58,8 +58,8 @@ type Item = Unpacked<Arr>
 Matches a JSON object.
 
 ```typescript
-export type JsonObject = { [Key in string]?: JsonValue | undefined };
-export type JsonArray = JsonValue[];
-export type JsonPrimitive = string | number | boolean | null;
-export type JsonValue = JsonPrimitive | JsonObject | JsonArray;
+type JsonObject = { [Key in string]: JsonValue } & { [Key in string]?: JsonValue | undefined };
+type JsonArray = JsonValue[];
+type JsonPrimitive = string | number | boolean | null;
+type JsonValue = JsonPrimitive | JsonObject | JsonArray;
 ```
