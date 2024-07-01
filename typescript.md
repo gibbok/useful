@@ -52,3 +52,14 @@ type Item = Unpacked<Arr>
 ```
 
 [Example](https://www.typescriptlang.org/play?ssl=5&ssc=26&pln=1&pc=1#code/KYDwDg9gTgLgBDAnmYcCqA7MBDAxga2ABMAeAFQD44BeOMuUGYDIgZzgEEoptESBLDADNgUdFQD86OAC46AbgBQipCk7cacANoBvbDIwBXALYAjUQF8ANHCNnRN1jCiCA5gF1lq1AEkmxzUwcAmISLigKIA)
+
+## JSON object
+
+Matches a JSON object.
+
+```typescript
+export type JsonObject = { [Key in string]?: JsonValue | undefined };
+export type JsonArray = JsonValue[];
+export type JsonPrimitive = string | number | boolean | null;
+export type JsonValue = JsonPrimitive | JsonObject | JsonArray;
+```
