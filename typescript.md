@@ -75,6 +75,7 @@ type Person = {
 
 const getValuByKey = (data: Person, key: keyof Person) => data[key]
 
+// not optimal way
 const r1 = getValuByKey({
     name: 'simone',
     age: 123,
@@ -83,9 +84,12 @@ const r1 = getValuByKey({
 
 const getValueByKeyWithGeneric = <T, K extends keyof T>(data: T, key: K) => data[key]
 
+// better way, use generic to infer properly the type, as with a generic we define the type passed in is a subtype (so we know all props)
 const r2 = getValueByKeyWithGeneric({
     name: 'simone',
     age: 123,
     admin: 0
 }, 'admin') //number correct result
+
+// Explanation for this behaviour in TS: https://github.com/microsoft/TypeScript/pull/12253#issuecomment-263132208
 ```
