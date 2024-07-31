@@ -93,3 +93,15 @@ const r2 = getValueByKeyWithGeneric({
 
 // Explanation for this behaviour in TS: https://github.com/microsoft/TypeScript/pull/12253#issuecomment-263132208
 ```
+
+## Conditional types with infer and template literals
+
+```typescript
+type GetUserId<T> = T extends `site.com/userId:${infer U}` ? U extends 'simone' ? { userId: U } : { userId: 'notSimone' } : never
+
+type SimoneRoute = 'site.com/userId:simone'
+type SimoneUserId = GetUserId<SimoneRoute>
+
+type JoyRoute = 'site.com/userId:joy'
+type JoyUserId = GetUserId<JoyRoute>
+```
