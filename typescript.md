@@ -63,3 +63,29 @@ type JsonArray = JsonValue[];
 type JsonPrimitive = string | number | boolean | null;
 type JsonValue = JsonPrimitive | JsonObject | JsonArray;
 ```
+
+## Dealing with keyof objects:
+
+```typescript
+type Person = {
+    name: string,
+    age: number,
+    admin: 0 | 1,
+}
+
+const getValuByKey = (data: Person, key: keyof Person) => data[key]
+
+const r1 = getValuByKey({
+    name: 'simone',
+    age: 123,
+    admin: 0
+}, 'admin') // string | number, typescript was not able to narrow the type it takes the common denominator: string | number | (0 | 1)
+
+const getValueByKeyWithGeneric = <T, K extends keyof T>(data: T, key: K) => data[key]
+
+const r2 = getValueByKeyWithGeneric({
+    name: 'simone',
+    age: 123,
+    admin: 0
+}, 'admin') //number correct result
+```
