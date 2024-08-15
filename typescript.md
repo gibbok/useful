@@ -105,3 +105,20 @@ type SimoneUserId = GetUserId<SimoneRoute>
 type JoyRoute = 'site.com/userId:joy'
 type JoyUserId = GetUserId<JoyRoute>
 ```
+
+## Maintaining Autocomplete for Union Type with Widening
+
+
+```typescript
+type Color = "red" | "blue" | string // type is widened to string
+
+const color: Color = "green" // we lose autocomplete for "red" and "blue"
+```
+
+To maintain autocomplete, we can use a string intersected with an empty object. This way, TypeScript will preserve the autocomplete suggestions:
+
+```typescript
+type Color = "red" | "blue" | (string & {})
+
+const color: Color = "green" // autocomplete is kept for "red" and "blue"
+```
