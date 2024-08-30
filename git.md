@@ -160,3 +160,24 @@ or
 git reset --hard HEAD~1
 git push origin -f
 ```
+
+## Conflicts with Merge or Rebase
+
+Rebase:
+
+When rebasing a feature branch on top of the base branch:
+
+- **Current changes:**  
+  Your changes from the feature branch (usually the changes you are working on).
+- **Incoming changes:**  
+  Changes from the base branch.
+
+Merge:
+
+Merging combines the changes from two branches (the feature branch and the base branch) into a single commit. 
+
+- **Current changes:**  
+  Your changes from the feature branch (usually the changes you are working on).
+- **Incoming changes:**  
+  Changes in the base branch.
+
