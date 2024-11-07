@@ -181,3 +181,12 @@ Merging combines the changes from two branches (the feature branch and the base 
 - **Incoming changes:**  
   Changes in the base branch.
 
+### Prevent a local file to be commit locally
+
+Prevent a file from being committed locally (event after it is included in a `.gitignore` file). It can be insalled as git hook for instance after a checkout `post-checkout`.
+
+```shell
+git update-index --assume-unchanged path-to-file.json
+```
+
+This differs from using a `.gitignore file`, as it applies to tracked files that you want Git to temporarily ignore. Files already tracked by Git are not affected by `.gitignore` settings.
