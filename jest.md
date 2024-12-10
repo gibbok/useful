@@ -35,8 +35,16 @@ describe('ImagesWithJWT', () => {
 
 ## Jest setup timezone
 
-Run Jest tests at a specific timezone.
+Set timezone settings for tests running in Jest.
 
 ```shell
 "test": "TZ=UTC jest",
+```
+
+## Jest setup localisation
+
+Set localisation settings for tests running in Jest.
+
+```shell
+"test": "LC_ALL=en_EN.UTF-8 jest",
 ```
