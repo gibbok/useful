@@ -31,3 +31,12 @@ describe('ImagesWithJWT', () => {
     })
   })
 ```
+
+
+## Jest setup timezone
+
+Run Jest tests at a specific timezone.
+
+```shell
+"test": "TZ=UTC jest",
+```
