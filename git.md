@@ -190,3 +190,9 @@ git update-index --assume-unchanged path-to-file.json
 ```
 
 This differs from using a `.gitignore file`, as it applies to tracked files that you want Git to temporarily ignore. Files already tracked by Git are not affected by `.gitignore` settings.
+
+## Commit case-sensitive only filename changes
+
+```shell
+git mv FileName.ts filename.ts
+```
