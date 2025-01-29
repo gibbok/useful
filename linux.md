@@ -97,6 +97,13 @@ od -An -t x1 -j 4 -N 1 your-file
 objdump -a your-file|grep 'file format'
 ```
 
+### How to kill a process
+
+```shell
+pgrep name_process # return process id
+kill 123 # stop process with id
+```
+
 ## Docker
 
 ### Inspect content for a container
@@ -104,3 +111,5 @@ objdump -a your-file|grep 'file format'
 ```shell
 docker exec -t -i mycontainer /bin/bash
 ```
+
+
