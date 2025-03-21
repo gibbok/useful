@@ -196,3 +196,30 @@ This differs from using a `.gitignore file`, as it applies to tracked files that
 ```shell
 git mv FileName.ts filename.ts
 ```
+
+## Go back in time and check out at that point in time
+
+```shell
+git checkout HEAD@{1.week.ago}
+```
+
+## Switches you to your previous branch
+
+It switches you to your previous branch. Instead of typing it all out, you can just say "-"
+
+```shell
+git checkout -
+```
+
+works also with:
+
+```shell
+`git merge -`
+```
+
+
+
+
+
+
+
