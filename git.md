@@ -217,6 +217,14 @@ works also with:
 `git merge -`
 ```
 
+## Merge and automatically solve conflicts
+
+Merges the specified branch into the current branch, and when conflicts occur, it automatically chooses the changes from the branch being merged ("theirs").
+
+```shell
+git merge -X theirs
+```
+
 
 
 
