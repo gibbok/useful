@@ -230,14 +230,12 @@ git merge -X theirs
 Perform latest checkout branch.
 
 ```shell
-git checkout - is a shorthand for .
+git checkout -
 ```
 
-or
+or `git checkout @{-1}` or `git switch -`
 
-```shell
-git checkout @{-1}
-```
+
 
 
 
