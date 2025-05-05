@@ -225,6 +225,19 @@ Merges the specified branch into the current branch, and when conflicts occur, i
 git merge -X theirs
 ```
 
+## Checkout previouse branch
+
+Perform latest checkout branch.
+
+```shell
+git checkout - is a shorthand for .
+```
+
+or
+
+```shell
+git checkout @{-1}
+```
 
 
 
