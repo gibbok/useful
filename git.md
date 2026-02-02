@@ -236,6 +236,20 @@ git checkout -
 or `git checkout @{-1}` or `git switch -`
 
 
+## Compare differences
+
+Compare your current branch against a branch, in this case called `develop`, showing only the changes you've introduced.
+
+```shelll
+git diff develop...HEAD
+```
+
+or
+
+```shell
+git diff develop...$(git branch --show-current)
+```
+
 
 
 
