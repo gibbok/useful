@@ -240,7 +240,7 @@ or `git checkout @{-1}` or `git switch -`
 
 Compare your current branch against a branch, in this case called `develop`, showing only the changes you've introduced.
 
-```shelll
+```shell
 git diff develop...HEAD
 ```
 
@@ -250,6 +250,14 @@ or
 git diff develop...$(git branch --show-current)
 ```
 
+
+## Remove all  git worktrees expect develop
+
+Remove all  git worktrees expect develop:
+
+```shell
+git worktree list | grep -v '/develop ' | grep -v '(bare)' | awk '{print $1}' | xargs -I {} git worktree remove {}
+```
 
 
 
