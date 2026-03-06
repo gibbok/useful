@@ -1,6 +1,10 @@
 # TMUX
 
-## Send a command to all windows, panels
+## Sync directory across panes
+
+Run this command in your active pane to cd all other panes in the window to the same directory.
+
+Useful when you've navigated deep into a project path and want your splits to follow without manually cd-ing in each one.
 
 ```bash
 tmux list-panes -a -F '#{pane_id}' | xargs -I{} tmux send-keys -t {} "cd $(pwd)"
