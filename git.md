@@ -259,8 +259,16 @@ Remove all  git worktrees expect develop:
 git worktree list | grep -v '/develop ' | grep -v '(bare)' | awk '{print $1}' | xargs -I {} git worktree remove {}
 ```
 
+## Skip git verification
 
+Skip git verification for commits:
 
+```shell
+git commit --no-verify
+```
 
+Skip git verification for push:
 
-
+```shell
+git push --no-verify
+```
