@@ -272,3 +272,71 @@ Skip git verification for push:
 ```shell
 git push --no-verify
 ```
+
+## Script to remove all git worktree
+
+Use this script to cleanup/remove all git worktree:
+
+```shell
+#!/usr/bin/env bash
+set -euo pipefail
+
+# -----------------------------------------------------------------------------
+#
+# Removes all git worktrees in the current repository except protected branches.
+# Protected branches (master, develop, main) and the main worktree are skipped.
+#
+# Usage:
+#   ./remove-worktrees.sh
+#
+# Requirements:
+#   - Must be run from inside a git repository
+#   - git >= 2.5 (worktree support)
+# -----------------------------------------------------------------------------
+
+PROTECTED=("master" "develop" "main")
+
+WORKTREE_LIST=$(git worktree list --porcelain)
+MAIN_WORKTREE=$(echo "$WORKTREE_LIST" | grep "^worktree " | head -1 | awk '{print $2}')
+
+is_protected() {
+  local path="$1"
+  local name
+  name=$(basename "$path")
+
+  [[ "$path" == "$MAIN_WORKTREE" ]] && return 0
+
+  for protected in "${PROTECTED[@]}"; do
+    [[ "$name" == "$protected" ]] && return 0
+  done
+
+  return 1
+}
+
+echo "Main worktree: $MAIN_WORKTREE"
+echo ""
+
+while IFS= read -r path; do
+  if is_protected "$path"; then
+    echo "⏭  Skipping protected: $path"
+    continue
+  fi
+
+  echo "🗑  Removing: $path"
+  git worktree remove --force "$path"
+done <<< "$(echo "$WORKTREE_LIST" | grep "^worktree " | awk '{print $2}')"
+
+git worktree prune
+
+echo ""
+echo "✅ Done. Remaining worktrees:"
+git worktree list
+```
+
+
+
+
+
+
+
+
