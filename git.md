@@ -333,10 +333,29 @@ echo "✅ Done. Remaining worktrees:"
 git worktree list
 ```
 
+## Remove git cache
 
+Remove git cache, useful when reaching the limit.
 
+Dry run with IDs:
 
+```shell
+gh cache list --json id --jq '.[].id' | xargs -n1 -I{} echo gh cache delete {}
+```
 
+Dry run with IDs and keu (name):
 
+```shell
+gh cache list --json id,key \
+  --jq '.[] | "\(.id)\t\(.key)"' |
+while IFS=$'\t' read -r id key; do
+  echo "Cache: $key (ID: $id)"
+  echo "  gh cache delete $id"
+done
+```
 
+Delete command:
 
+```shell
+gh cache list --json id --jq '.[].id' | xargs -n1 gh cache delete
+```
