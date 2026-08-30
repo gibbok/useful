@@ -6,7 +6,7 @@
 printf "%-55s %12s %12s\n" "REPOSITORY" "ARTIFACT MB" "CACHE MB"
 printf "%-55s %12s %12s\n" "----------" "-----------" "--------"
 
-gh repo list gibbok --limit 1000 --json nameWithOwner -q '.[].nameWithOwner' |
+gh repo list YOUR_USER_NAME --limit 1000 --json nameWithOwner -q '.[].nameWithOwner' |
 while read repo; do
 
   artifacts=$(gh api --paginate "/repos/$repo/actions/artifacts?per_page=100" \
